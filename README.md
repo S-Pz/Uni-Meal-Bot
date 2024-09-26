@@ -25,10 +25,3 @@ Para **desativar**:
 ```sh
 $ deactivate
 ```
-
-### Env
-Para se utilizar a **Api** do bot crie um arquivo **.env** seguindo o modelo:
-```
-API_KEY = 
-BOT_USERNAME = 
-```

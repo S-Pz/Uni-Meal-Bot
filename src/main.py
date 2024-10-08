@@ -15,10 +15,10 @@ if __name__ =='__main__':
     app.add_handler(CommandHandler('ajuda', responses.help_command))
     
     app.add_handler(CommandHandler('almoco', responses.lunch_command))
-    app.add_handler(CallbackQueryHandler(responses.lunch_menus))
+    app.add_handler(CallbackQueryHandler(responses.lunch_menus,pattern='^lunch_'))
     
-    app.add_handler(CommandHandler('jantar', responses.dinner_command))
-    app.add_handler(CallbackQueryHandler(responses.dinner_menus))
+    app.add_handler(CommandHandler('janta', responses.dinner_command))
+    app.add_handler(CallbackQueryHandler(responses.dinner_menus, pattern='^dinner_'))
     
     #Message
     app.add_handler(MessageHandler(filters.TEXT, responses.handle_message))

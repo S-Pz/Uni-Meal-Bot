@@ -28,12 +28,12 @@ async def lunch_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
     
     keyboard = [
         [
-            InlineKeyboardButton("Cap", callback_data='Cap'),
-            InlineKeyboardButton("Cco", callback_data='Cco'),
-            InlineKeyboardButton("Cdb", callback_data='Cdb'),
-            InlineKeyboardButton("Csa", callback_data='Csa'),
-            InlineKeyboardButton("Csl", callback_data='Csl'),
-            InlineKeyboardButton("Ctan", callback_data='Ctan')
+            InlineKeyboardButton("Cap", callback_data='lunch_Cap'),
+            InlineKeyboardButton("Cco", callback_data='lunch_Cco'),
+            InlineKeyboardButton("Cdb", callback_data='lunch_Cdb'),
+            InlineKeyboardButton("Csa", callback_data='lunch_Csa'),
+            InlineKeyboardButton("Csl", callback_data='lunch_Csl'),
+            InlineKeyboardButton("Ctan", callback_data='lunch_Ctan')
         ]
     ]
 
@@ -46,7 +46,7 @@ async def lunch_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     choice = query.data
     
-    if (choice == 'Cap'):
+    if (choice == 'lunch_Cap'):
         try:
             menu:str = '../csv/cap_menu.csv'
             date:datetime.datetime = query.message.date.today()
@@ -56,7 +56,7 @@ async def lunch_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')
         
-    elif (choice == 'Csl'):
+    elif (choice == 'lunch_Csl'):
         try:
             menu:str = '../csv/csl_menu.csv'
             date:datetime.datetime = query.message.date.today()
@@ -66,7 +66,7 @@ async def lunch_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')
         
-    elif (choice == 'Cco'):
+    elif (choice == 'lunch_Cco'):
         try:
             menu:str = '../csv/cco_menu.csv'
             date:datetime.datetime = query.message.date.today()
@@ -76,7 +76,7 @@ async def lunch_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')
        
-    elif choice == 'Cdb':
+    elif choice == 'lunch_Cdb':
         try:
             menu:str = '../csv/cdb_menu.csv'
             date:datetime.datetime = query.message.date.today()
@@ -86,7 +86,7 @@ async def lunch_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')            
 
-    elif choice == 'Csa':
+    elif choice == 'lunch_Csa':
         try:
             menu:str = '../csv/csa_menu.csv'
             date:datetime.datetime = query.message.date.today()
@@ -96,7 +96,7 @@ async def lunch_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')
 
-    elif choice == 'Ctan':
+    elif choice == 'lunch_Ctan':
         try:
             menu:str = '../csv/ctan_menu.csv'
             date:datetime.datetime = query.message.date.today()
@@ -112,12 +112,12 @@ async def dinner_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
     
     keyboard = [
         [
-            InlineKeyboardButton("Cap", callback_data='Cap'),
-            InlineKeyboardButton("Cco", callback_data='Cco'),
-            InlineKeyboardButton("Cdb", callback_data='Cdb'),
-            InlineKeyboardButton("Csa", callback_data='Csa'),
-            InlineKeyboardButton("Csl", callback_data='Csl'),
-            InlineKeyboardButton("Ctan", callback_data='Ctan')
+            InlineKeyboardButton("Cap", callback_data='dinner_Cap'),
+            InlineKeyboardButton("Cco", callback_data='dinner_Cco'),
+            InlineKeyboardButton("Cdb", callback_data='dinner_Cdb'),
+            InlineKeyboardButton("Csa", callback_data='dinner_Csa'),
+            InlineKeyboardButton("Csl", callback_data='dinner_Csl'),
+            InlineKeyboardButton("Ctan", callback_data='dinner_Ctan')
         ]
     ]
 
@@ -130,7 +130,7 @@ async def dinner_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     choice = query.data
 
-    if (choice == 'Cap'):
+    if (choice == 'dinner_Cap'):
         try:
             menu:str = '../csv/cap_menu.csv'
             date:datetime.datetime = query.message.date.today()
@@ -140,7 +140,7 @@ async def dinner_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')
         
-    elif (choice == 'Csl'):
+    elif (choice == 'dinner_Csl'):
         try:
             menu:str = '../csv/csl_menu.csv'
             date:datetime.datetime = query.message.date.today()
@@ -150,7 +150,7 @@ async def dinner_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')
         
-    elif (choice == 'Cco'):
+    elif (choice == 'dinner_Cco'):
         try:
             menu:str = '../csv/cco_menu.csv'
             date:datetime.datetime = query.message.date.today()
@@ -160,7 +160,7 @@ async def dinner_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')
        
-    elif choice == 'Cdb':
+    elif choice == 'dinner_Cdb':
         try:
             menu:str = '../csv/cdb_menu.csv'
             date:datetime.datetime = query.message.date.today()
@@ -170,7 +170,7 @@ async def dinner_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')            
 
-    elif choice == 'Csa':
+    elif choice == 'dinner_Csa':
         try:
             menu:str = '../csv/csa_menu.csv'
             date:datetime.datetime = query.message.date.today()
@@ -180,10 +180,10 @@ async def dinner_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')
 
-    elif choice == 'Ctan':
+    elif choice == 'dinner_Ctan':
         try:
             menu:str = '../csv/ctan_menu.csv'
-            date:datetime = query.message.date.today()
+            date:datetime.datetime = query.message.date.today()
 
             response_dinner = dinner_filter(menu, date)
             await query.edit_message_text(response_format_2(response_dinner), parse_mode = 'Markdown')

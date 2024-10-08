@@ -9,7 +9,7 @@ if __name__ =='__main__':
     app = Application.builder().token(responses.API_KEY).build()
 
     #Commands
-    app.add_handler(CommandHandler('iniciar', responses.start_command))
+    app.add_handler(CommandHandler('start', responses.start_command))
     
     app.add_handler(CommandHandler('sobre', responses.about_command))
     app.add_handler(CommandHandler('ajuda', responses.help_command))

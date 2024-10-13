@@ -257,7 +257,27 @@ def handle_responses(text: str, date) -> str:
         except:
             return '*Cardápio indisponível* \U0001F625 !'
     
-    return 'Não entendi a sua mensagem. \U0001F605 !'
+    elif ('jantar cdb' in processed) or ('janta cdb' in processed):
+        
+        try:
+            menu:str = '../csv/cdb_menu.csv'
+            response_dinner = dinner_filter(menu, date)
+
+            return response_format_2(response_dinner)
+        except:
+            return '*Cardápio indisponível* \U0001F625 !'
+    
+    elif ('jantar ctan' in processed) or ('janta ctan' in processed):
+        
+        try:
+            menu = '../csv/ctan_menu.csv'
+            response_dinner = dinner_filter(menu, date)
+
+            return response_format(response_dinner)
+        except:
+            return '*Cardápio indisponível* \U0001F625 !'
+        
+    return 'Não entendi a sua mensagem. \U0001F605! /ajuda '
 
 #When call this function, pass too the BOT_USERNAME
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -268,13 +288,13 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     date = update.message.date.today()
 
     #Debug information
-    print(f'User({update.message.chat.id}) in {message_type}: {text}')
+    #print(f'User({update.message.chat.id}) in {message_type}: {text}')
 
     if message_type == 'group':
 
         if BOT_USERNAME in text:
             new_text = text.replace(BOT_USERNAME,'').strip()
-            print(new_text)
+            #print(new_text)
             response: str = handle_responses(new_text, date)
         else:
             return

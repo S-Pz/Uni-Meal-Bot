@@ -2,6 +2,7 @@ import os
 
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes, CallbackContext
+from telegram.constants import ParseMode
 from filter import lunch_filter, dinner_filter, response_format, response_format_2
 from dotenv import load_dotenv
 import datetime
@@ -13,7 +14,10 @@ BOT_USERNAME = os.getenv('BOT_USERNAME')
 
 #commands
 async def start_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
-   await update.message.reply_text('Boas vindas \U0001F60E \U0001F389, para mais informações digite: /ajuda ou /sobre!')
+   text:str = """
+    👋 *Olá!* Estou aqui para ajudar você a encontrar informações sobre os Ru's de maneira simples e rápida! 😎🎉 Para saber mais, digite: /ajuda!
+    """
+   await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
     
 async def about_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
     head = "Bot idealizado e criado pelos alunos da computação:\n......\nSeu intuito é o de facilitar a visualização dos cardápios." 
@@ -22,8 +26,10 @@ async def about_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(head + obs, parse_mode='Markdown')
 
 async def help_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("This command is under construction")
-
+    with open('../text_commands_files/help_command.md','r') as f:
+        message_text:str = f.read()
+    await update.message.reply_text(message_text, parse_mode=ParseMode.HTML)
+    
 async def lunch_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
     
     keyboard = [
@@ -197,7 +203,7 @@ def handle_responses(text: str, date) -> str:
     
     processed:str = text.lower()
     
-    if ('almoço ctan' in processed)  or ('almoco ctan' in processed):
+    if ('almoço ctan' in processed) or ('almoco ctan' in processed):
         try:
             menu = '../csv/ctan_menu.csv'
             response_lunch = lunch_filter(menu, date)
@@ -224,7 +230,7 @@ def handle_responses(text: str, date) -> str:
         except:
             return '*Cardápio indisponível* \U0001F625 !'
 
-    elif ('almoço cco' in processed)or ('almoco cco' in processed):
+    elif ('almoço cco' in processed) or ('almoco cco' in processed):
         try:
             menu = '../csv/cco_menu.csv'
             response_lunch = lunch_filter(menu, date)
@@ -233,7 +239,7 @@ def handle_responses(text: str, date) -> str:
         except:
             return '*Cardápio indisponível* \U0001F625 !'
 
-    elif ('almoço csl' in processed)or ('almoco csl' in processed):
+    elif ('almoço csl' in processed) or ('almoco csl' in processed):
         try:
             menu = '../csv/csl_menu.csv'
             response_lunch = lunch_filter(menu, date)
@@ -242,7 +248,7 @@ def handle_responses(text: str, date) -> str:
         except:
             return '*Cardápio indisponível* \U0001F625 !'
 
-    elif ('almoço cap' in processed)or ('almoco cap' in processed):
+    elif ('almoço cap' in processed) or ('almoco cap' in processed):
         try:
             menu = '../csv/cap_menu.csv'
             response_lunch = lunch_filter(menu, date)

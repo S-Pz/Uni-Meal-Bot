@@ -99,7 +99,7 @@ async def lunch_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
             date:datetime.datetime = query.message.date.today()
 
             response_lunch = lunch_filter(menu, date)
-            await query.edit_message_text(response_format_2(response_lunch), parse_mode = 'Markdown')
+            await query.edit_message_text(response_format(response_lunch), parse_mode = 'Markdown')
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')
 
@@ -109,7 +109,7 @@ async def lunch_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
             date:datetime.datetime = query.message.date.today()
 
             response_lunch = lunch_filter(menu, date)
-            await query.edit_message_text(response_format_2(response_lunch), parse_mode = 'Markdown')
+            await query.edit_message_text(response_format(response_lunch), parse_mode = 'Markdown')
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')
     else:
@@ -183,7 +183,7 @@ async def dinner_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
             date:datetime.datetime = query.message.date.today()
 
             response_dinner = dinner_filter(menu, date)
-            await query.edit_message_text(response_format_2(response_dinner), parse_mode = 'Markdown')
+            await query.edit_message_text(response_format(response_dinner), parse_mode = 'Markdown')
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')
 
@@ -193,7 +193,7 @@ async def dinner_menus(update:Update, context: ContextTypes.DEFAULT_TYPE):
             date:datetime.datetime = query.message.date.today()
 
             response_dinner = dinner_filter(menu, date)
-            await query.edit_message_text(response_format_2(response_dinner), parse_mode = 'Markdown')
+            await query.edit_message_text(response_format(response_dinner), parse_mode = 'Markdown')
         except:
             await query.message.reply_text('*Cardápio indisponível* \U0001F625 !', parse_mode = 'Markdown')
     else:

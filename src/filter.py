@@ -35,16 +35,16 @@ def response_format(text:list) -> str: # format response
     
     print(text)
 
-    header = "📅* "+ str(text[0][0]) + "*" + " *"+ str(text[0][11] +":*\t\t🍽️\n\n")
-    main_lawn = "🍴 *Prato Principal:* " + str(text[0][1])+ "\n\n"
-    eggs = "🥚 *OVOS:* " + str(text[0][2]) + "\n"
-    veg = "🥬 *VEGETARIANO:* " + str(text[0][3]) + "\n"
-    garn = "🍝 *GUARNIÇÃO:* " + str(text[0][4]) + "\n"
-    rice = "🍚 *ARROZ:* " + str(text[0][5]) + "\n"
-    bean = "🫘 *FEIJÃO:* " + str(text[0][6]) + "\n"
-    sal= "🥗 *SALADAS:* " + str(text[0][7]) + " / " + str(text[0][8]) + "\n"
-    juice = "🧃 *SUCO:* " + str(text[0][9]) + "\n"
-    dess = "🍬 🍎 *SOBREMESA:* " + str(text[0][10]) + "\n"
+    header = "📅* "+ str(text[0][0]) + "*" + " *"+ str(text[0][1] +":*\t\t🍽️\n\n")
+    main_lawn = "🍴 *Prato Principal:* " + str(text[0][2])+ "\n\n"
+    eggs = "🥚 *OVOS:* " + str(text[0][3]) + "\n"
+    veg = "🥬 *VEGETARIANO:* " + str(text[0][4]) + "\n"
+    garn = "🍝 *GUARNIÇÃO:* " + str(text[0][5]) + "\n"
+    rice = "🍚 *ARROZ:* " + str(text[0][6]) + "\n"
+    bean = "🫘 *FEIJÃO:* " + str(text[0][7]) + "\n"
+    sal= "🥗 *SALADAS:* " + str(text[0][8]) + " / " + str(text[0][9]) + "\n"
+    juice = "🧃 *SUCO:* " + str(text[0][10]) + "\n"
+    dess = "🍬 🍎 *SOBREMESA:* " + str(text[0][11]) + "\n"
 
     response_text = header + main_lawn + eggs + veg + garn + rice + bean + sal+ juice + dess
     

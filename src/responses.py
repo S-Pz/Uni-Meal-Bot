@@ -16,7 +16,7 @@ BOT_USERNAME = os.getenv('BOT_USERNAME')
 async def start_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
    text:str = """
     👋 *Olá!* Estou aqui para ajudar você a encontrar informações sobre os Ru's de maneira simples e rápida! 😎🎉 Para saber mais, digite: /ajuda!
-    Infelizmente no momento so estou disponível de 9 às 17 😞.
+
     """
    await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
     

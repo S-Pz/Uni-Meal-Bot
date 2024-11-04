@@ -33,7 +33,7 @@ def dinner_filter(filepath:str, date:datetime.datetime) -> list: # make a filter
 
 def response_format(text:list) -> str: # format response
     
-    #print(text)
+    print(text)
 
     header = "📅* "+ str(text[0][0]) + "*" + " *"+ str(text[0][11] +":*\t\t🍽️\n\n")
     main_lawn = "🍴 *Prato Principal:* " + str(text[0][1])+ "\n\n"
@@ -51,7 +51,7 @@ def response_format(text:list) -> str: # format response
     return response_text
 
 def response_format_2(text:list) -> str: # format response #cdb, csl, cco
-    #print(text)
+    print(text)
 
     header = "📅* "+ str(text[0][0]) + "*" + " *"+ str(text[0][1] +":*\t\t🍽️\n\n")
     main_lawn = "🍴 *Prato Principal:* " + str(text[0][2])+ "\n\n"

@@ -16,11 +16,9 @@ BOT_USERNAME = os.getenv('BOT_USERNAME')
 
 #commands
 async def start_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
-   text:str = """
-    👋 *Olá!* Estou aqui para ajudar você a encontrar informações sobre os Ru's de maneira simples e rápida! 😎🎉 Para saber mais, digite: /ajuda!
-
-    """
-   await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
+    with open('../text_commands_files/start_command.md','r') as f:
+        start:str = f.read()
+    await update.message.reply_html(start)
     
 async def about_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
     head = "Bot idealizado e criado pelos alunos da computação:\n......\nSeu intuito é o de facilitar a visualização dos cardápios." 

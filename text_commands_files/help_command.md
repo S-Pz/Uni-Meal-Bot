@@ -5,4 +5,10 @@ Você pode visualizar as opções disponíveis utilizando o <b>Menu</b>. Se quis
 <blockquote>almoço "nome do RU"</blockquote>
 <blockquote>janta "nome do RU"</blockquote>
 
-Caso queira escolher o cardápio, <b>clique no menu</b> escolha dentre as opções <b>/almoco</b> ou <b>/janta</b>. Um menu de opção irá aparecer, basta ecolher qual ru deseja.
+Caso queira escolher o cardápio, <b>clique no menu</b> escolha dentre as opções <b>/almoco</b> ou <b>/janta</b>. O submenu irá aparecer, basta ecolher qual deseja.
+
+<b>Visualizar os horários de funcionamento:</b>
+Para verificar os horários de funcionamento <b>clique no menu</b> e escolha <b>/info_horario</b>.
+
+<b>Visualizar os preços:</b>
+Para verificar os preços <b>clique no menu</b> e escolha <b>/info_preco</b>.

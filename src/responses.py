@@ -1,11 +1,13 @@
 import os
+import datetime
 
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes, CallbackContext
 from telegram.constants import ParseMode
 from filter import lunch_filter, dinner_filter, response_format, response_format_2
 from dotenv import load_dotenv
-import datetime
+
+
 #Load file .env
 load_dotenv()
 
@@ -27,10 +29,22 @@ async def about_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(head + obs, parse_mode='Markdown')
 
 async def help_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
-    with open('../text_commands_files/help_command.md','r') as f:
-        message_text:str = f.read()
-    await update.message.reply_text(message_text, parse_mode=ParseMode.HTML)
     
+    with open('../text_commands_files/help_command.md','r') as f:
+        help:str = f.read()
+    await update.message.reply_html(help)
+
+async def info_schedules(update:Update, context: ContextTypes.DEFAULT_TYPE):
+    
+    with open('../text_commands_files/info_schedules.md','r') as f:
+        schedules:str = f.read()
+    await update.message.reply_html(schedules)
+
+async def info_price(update:Update, context: ContextTypes.DEFAULT_TYPE):
+    with open('../text_commands_files/info_price.md','r') as f:
+        price:str = f.read()
+    await update.message.reply_html(price)
+
 async def lunch_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
     
     keyboard = [

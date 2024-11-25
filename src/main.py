@@ -20,6 +20,9 @@ if __name__ =='__main__':
     app.add_handler(CommandHandler('janta', responses.dinner_command))
     app.add_handler(CallbackQueryHandler(responses.dinner_menus, pattern='^dinner_'))
     
+    app.add_handler(CommandHandler('info_horario', responses.info_schedules))
+    app.add_handler(CommandHandler('info_preco', responses.info_price))
+    
     #Message
     app.add_handler(MessageHandler(filters.TEXT, responses.handle_message))
 
